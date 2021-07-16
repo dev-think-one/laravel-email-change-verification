@@ -69,7 +69,7 @@ if ($user->email != $request->input('email')) {
 Route::get( '/email-change-verification/{token}', [
              \App\Http\Controllers\Dashboard\ProfileController::class,
              'verifyNewEmail',
-         ] );
+         ] )->name('email.change.verification');
 ```
 ```injectablephp
 // controller
