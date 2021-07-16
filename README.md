@@ -28,7 +28,24 @@ public function down() {
 }
 ```
 
-2. Send verification on email change
+```shell
+php artisan migrate
+```
+
+2. Update User model
+   
+```injectablephp
+use EmailChangeVerification\User\HasEmailChangeVerification;
+use EmailChangeVerification\User\WithEmailChangeVerification;
+
+class User extends Authenticatable implements HasEmailChangeVerification
+{
+    use WithEmailChangeVerification;
+    // ...
+}
+```
+
+3. Send verification on email change
 
 ```injectablephp
 if ($user->email != $request->input('email')) {
@@ -45,7 +62,7 @@ if ($user->email != $request->input('email')) {
 }
 ```
 
-3. Verify new email
+4. Verify new email
 
 ```injectablephp
 // routes
