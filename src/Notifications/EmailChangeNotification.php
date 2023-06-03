@@ -44,7 +44,7 @@ class EmailChangeNotification extends Notification
      */
     public function __construct(string $token, string $newEmail)
     {
-        $this->token = $token;
+        $this->token    = $token;
         $this->newEmail = $newEmail;
     }
 
@@ -77,8 +77,8 @@ class EmailChangeNotification extends Notification
             $url = call_user_func(static::$createUrlCallback, $notifiable, $this->token);
         } else {
             $url = url(route('email.change.verification', [
-                'token' => $this->token,
-                'email' => $notifiable->getEmailForChangeEmail(),
+                'token'     => $this->token,
+                'email'     => $notifiable->getEmailForChangeEmail(),
                 'new_email' => $this->newEmail,
             ], false));
         }

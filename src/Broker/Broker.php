@@ -30,7 +30,7 @@ class Broker implements BrokerInterface
      */
     public function __construct(TokenRepositoryInterface $tokens, UserProvider $users)
     {
-        $this->users = $users;
+        $this->users  = $users;
         $this->tokens = $tokens;
     }
 
@@ -86,7 +86,7 @@ class Broker implements BrokerInterface
         // If the responses from the validate method is not a user instance, we will
         // assume that it is a redirect and simply return it from this method and
         // the user is properly redirected having an error message on the post.
-        if (! $user instanceof HasEmailChangeVerificationContract) {
+        if (!$user instanceof HasEmailChangeVerificationContract) {
             return $user;
         }
 
@@ -114,7 +114,7 @@ class Broker implements BrokerInterface
             return static::INVALID_USER;
         }
 
-        if (! $this->tokens->exists($user, $credentials['token'], $credentials['new_email'])) {
+        if (!$this->tokens->exists($user, $credentials['token'], $credentials['new_email'])) {
             return static::INVALID_TOKEN;
         }
 
@@ -135,7 +135,7 @@ class Broker implements BrokerInterface
 
         $user = $this->users->retrieveByCredentials($credentials);
 
-        if ($user && ! ($user instanceof HasEmailChangeVerificationContract)) {
+        if ($user && !($user instanceof HasEmailChangeVerificationContract)) {
             throw new UnexpectedValueException('User must implement HasEmailChangeVerificationContract interface.');
         }
 

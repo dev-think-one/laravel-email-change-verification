@@ -71,12 +71,12 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
         $expires = 60,
         $throttle = 60
     ) {
-        $this->table = $table;
-        $this->hasher = $hasher;
-        $this->hashKey = $hashKey;
-        $this->expires = $expires * 60;
+        $this->table      = $table;
+        $this->hasher     = $hasher;
+        $this->hashKey    = $hashKey;
+        $this->expires    = $expires * 60;
         $this->connection = $connection;
-        $this->throttle = $throttle;
+        $this->throttle   = $throttle;
     }
 
     /**
@@ -120,9 +120,9 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
     protected function getPayload(string $email, string $newEmail, string $token)
     {
         return [
-            'email' => $email,
-            'new_email' => $newEmail,
-            'token' => $this->hasher->make($token),
+            'email'      => $email,
+            'new_email'  => $newEmail,
+            'token'      => $this->hasher->make($token),
             'created_at' => new Carbon,
         ];
     }
@@ -140,8 +140,8 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
             $newEmail
         )->first();
 
-        return $record &&
-               ! $this->tokenExpired($record['created_at']) &&
+        return $record                                     &&
+               !$this->tokenExpired($record['created_at']) &&
                  $this->hasher->check($token, $record['token']);
     }
 
@@ -179,7 +179,7 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
             $user->getEmailForChangeEmail()
         )->first();
 
-        if ($record && ! $this->tokenExpired($record['created_at'])) {
+        if ($record && !$this->tokenExpired($record['created_at'])) {
             return $record['new_email'];
         }
 

@@ -18,11 +18,11 @@ class EmailChangeTest extends TestCase
     public function send_link()
     {
         $currentEmail = 'old@test.home';
-        $newEmail = 'new@test.home';
-        $token = Str::random();
+        $newEmail     = 'new@test.home';
+        $token        = Str::random();
 
-        $mockedProvider = $this->mock(EloquentUserProvider::class);
-        $mockUser = $this->mock(HasEmailChangeVerification::class);
+        $mockedProvider      = $this->mock(EloquentUserProvider::class);
+        $mockUser            = $this->mock(HasEmailChangeVerification::class);
         $mockTokenRepository = $this->mock(TokenRepositoryInterface::class);
 
         $mockUser->shouldReceive('sendEmailChangeNotification');
