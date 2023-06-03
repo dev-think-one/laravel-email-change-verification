@@ -25,8 +25,9 @@ php artisan vendor:publish --provider="EmailChangeVerification\ServiceProvider" 
 
 1. Create migration
 
-```injectablephp
+```php
 public function up() {
+    // TODO: change temple name to same as email-change-verification provider
     Schema::create('email_changes', function (\Illuminate\Database\Schema\Blueprint $table) {
         \EmailChangeVerification\Database\MigrationHelper::defaultColumns($table);
     });
@@ -43,7 +44,7 @@ php artisan migrate
 
 2. Update User model
    
-```injectablephp
+```php
 use EmailChangeVerification\User\HasEmailChangeVerification;
 use EmailChangeVerification\User\WithEmailChangeVerification;
 
@@ -56,7 +57,7 @@ class User extends Authenticatable implements HasEmailChangeVerification
 
 3. Send verification on email change
 
-```injectablephp
+```php
 if ($user->email != $request->input('email')) {
     $status = EmailChange::sendVerificationLink([
         'email' => $user->email,
@@ -73,7 +74,7 @@ if ($user->email != $request->input('email')) {
 
 4. Verify new email
 
-```injectablephp
+```php
 // routes
 Route::get( '/email-change-verification/{token}', [
              \App\Http\Controllers\Dashboard\ProfileController::class,
@@ -112,6 +113,13 @@ public function verifyNewEmail( Request $request, string $token ) {
     return 'Success'; // return view or redirect
 }
 ```
+5. Check is request sent
+
+```php
+// returns email or null if expired, Example: test@test.com
+$lastRequestedEmailChange = EmailChange::getRepository()->lastRequestedEmail($user); 
+```
+
 
 ## Credits
 
