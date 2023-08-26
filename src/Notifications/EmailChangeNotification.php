@@ -4,7 +4,6 @@ namespace EmailChangeVerification\Notifications;
 
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Lang;
 
 class EmailChangeNotification extends Notification
 {

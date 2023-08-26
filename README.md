@@ -1,13 +1,11 @@
 # Laravel: Email change verification
 
-![Packagist License](https://img.shields.io/packagist/l/yaroslawww/laravel-email-change-verification?color=%234dc71f)
-[![Packagist Version](https://img.shields.io/packagist/v/yaroslawww/laravel-email-change-verification)](https://packagist.org/packages/yaroslawww/laravel-email-change-verification)
-[![Total Downloads](https://img.shields.io/packagist/dt/yaroslawww/laravel-email-change-verification)](https://packagist.org/packages/yaroslawww/laravel-email-change-verification)
-[![Build Status](https://scrutinizer-ci.com/g/yaroslawww/laravel-email-change-verification/badges/build.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-email-change-verification/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/yaroslawww/laravel-email-change-verification/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-email-change-verification/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yaroslawww/laravel-email-change-verification/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-email-change-verification/?branch=master)
-
-
+![Packagist License](https://img.shields.io/packagist/l/think.studio/laravel-email-change-verification?color=%234dc71f)
+[![Packagist Version](https://img.shields.io/packagist/v/think.studio/laravel-email-change-verification)](https://packagist.org/packages/think.studio/laravel-email-change-verification)
+[![Total Downloads](https://img.shields.io/packagist/dt/think.studio/laravel-email-change-verification)](https://packagist.org/packages/think.studio/laravel-email-change-verification)
+[![Build Status](https://scrutinizer-ci.com/g/dev-think-one/laravel-email-change-verification/badges/build.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-email-change-verification/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/dev-think-one/laravel-email-change-verification/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-email-change-verification/?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dev-think-one/laravel-email-change-verification/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-email-change-verification/?branch=main)
 
 Package allow to add verification for new email when user change email
 
@@ -16,7 +14,7 @@ Package allow to add verification for new email when user change email
 You can install the package via composer:
 
 ```bash
-composer require yaroslawww/laravel-email-change-verification
+composer require think.studio/laravel-email-change-verification
 
 php artisan vendor:publish --provider="EmailChangeVerification\ServiceProvider" --tag="config"
 ```

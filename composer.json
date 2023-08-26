@@ -1,16 +1,16 @@
 {
-    "name": "yaroslawww/laravel-email-change-verification",
+    "name": "think.studio/laravel-email-change-verification",
     "description": "Package allow add verification for new email when user change email",
     "keywords": [
         "email-change",
         "email-verification"
     ],
-    "homepage": "https://github.com/yaroslawww/laravel-email-change-verification",
+    "homepage": "https://github.com/dev-think-one/laravel-email-change-verification",
     "license": "MIT",
     "authors": [
         {
             "name": "Yaroslav Georgitsa",
-            "email": "yaroslav.georgitsa@gmail.com",
+            "email": "yg@think.studio",
             "homepage": "https://github.com/yaroslawww",
             "role": "Developer"
         }
