@@ -119,7 +119,7 @@ class BrokerManager implements BrokerFactory
      *
      * @return string
      */
-    public function getDefaultDriver()
+    public function getDefaultDriver(): string
     {
         return $this->app['config']['email-change-verification.default'];
     }
@@ -130,7 +130,7 @@ class BrokerManager implements BrokerFactory
      * @param  string  $name
      * @return void
      */
-    public function setDefaultDriver($name)
+    public function setDefaultDriver(string $name): void
     {
         $this->app['config']['email-change-verification.default'] = $name;
     }

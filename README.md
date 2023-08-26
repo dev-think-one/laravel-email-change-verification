@@ -23,11 +23,10 @@ php artisan vendor:publish --provider="EmailChangeVerification\ServiceProvider" 
 
 ## Configuration and usage
 
-1. Create migration
+1. Create migration. Package not provide default migrations, so you will need create table manually. But packages provide class with default columns.
 
 ```php
 public function up() {
-    // TODO: change temple name to same as email-change-verification provider
     Schema::create('email_changes', function (\Illuminate\Database\Schema\Blueprint $table) {
         \EmailChangeVerification\Database\MigrationHelper::defaultColumns($table);
     });
@@ -81,7 +80,7 @@ Route::get( '/email-change-verification/{token}', [
              'verifyNewEmail',
          ] )->name('email.change.verification');
 ```
-```injectablephp
+```php
 // controller
 public function verifyNewEmail( Request $request, string $token ) {
 

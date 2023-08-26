@@ -96,12 +96,12 @@ class EmailChangeNotification extends Notification
     protected function buildMailMessage($url)
     {
         return ( new MailMessage )
-            ->subject(Lang::get('Email Change Verification'))
-            ->line(Lang::get('You are receiving this email because we received a email change request for your account.'))
-            ->line(Lang::get('New Email is: :email.', [ 'email' => $this->newEmail ]))
-            ->action(Lang::get('Accept Changes'), $url)
-            ->line(Lang::get('This link will expire in :count minutes.', [ 'count' => config('email-change-verification.brokers.' . config('email-change-verification.default') . '.expire') ]))
-            ->line(Lang::get('If you did not request a email change, no further action is required.'));
+            ->subject(__('Email Change Verification'))
+            ->line(__('You are receiving this email because we received a email change request for your account.'))
+            ->line(__('New Email is: :email.', [ 'email' => $this->newEmail ]))
+            ->action(__('Accept Changes'), $url)
+            ->line(__('This link will expire in :count minutes.', [ 'count' => config('email-change-verification.brokers.' . config('email-change-verification.default') . '.expire') ]))
+            ->line(__('If you did not request a email change, no further action is required.'));
     }
 
     /**

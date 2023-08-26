@@ -25,7 +25,7 @@ trait WithEmailChangeVerification
      *
      * @return void
      */
-    public function sendEmailChangeNotification(string $token, string $newEmail)
+    public function sendEmailChangeNotification(string $token, string $newEmail): void
     {
         $this->notify(new EmailChangeNotification($token, $newEmail));
     }

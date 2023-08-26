@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static mixed verify( array $credentials, \Closure $callback )
- * @method static string sendVerificationLink( array $credentials, string $newEmail )
+ * @method static string sendVerificationLink( array $credentials, string $newEmail, \Closure $callback = null )
  * @method static HasEmailChangeVerification getUser( array $credentials )
  * @method static string createToken( HasEmailChangeVerification $user, string $newEmail )
  * @method static void deleteToken( HasEmailChangeVerification $user )

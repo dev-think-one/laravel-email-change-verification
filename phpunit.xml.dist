@@ -8,7 +8,7 @@
     </report>
   </coverage>
   <testsuites>
-    <testsuite name="laravel-email-change-verification Test Suite">
+    <testsuite name="Test Suite">
       <directory>tests</directory>
     </testsuite>
   </testsuites>
